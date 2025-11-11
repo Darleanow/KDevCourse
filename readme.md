@@ -16,15 +16,15 @@ Objectif : comprendre et implémenter chaque couche — du matériel à l’espa
 
 - [x] Bootloader
 - [x] GDT 
-- [] IDT
-- [] ISR
-- [] PIC
-- [] PMM
-- [] VMM
-- [] Paging
-- [] Tasks
-- [] Scheduler
-- [] FS 
-- [] VFS
-- [] Syscalls
-- [] Userland
+- [ ] IDT
+- [ ] ISR
+- [ ] PIC
+- [ ] PMM
+- [ ] VMM
+- [ ] Paging
+- [ ] Tasks
+- [ ] Scheduler
+- [ ] FS 
+- [ ] VFS
+- [ ] Syscalls
+- [ ] Userland
