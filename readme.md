@@ -1,21 +1,21 @@
 # Cours : Développement de Systèmes d’Exploitation
 
 ## Description
-Ce cours enseigne les bases du développement d’un système d’exploitation moderne, depuis le bootloader jusqu’au kernel multitâche.  
+Ce cours enseigne les bases du développement d’un système d’exploitation moderne, depuis le bootloader jusqu’au kernel multitâche.
 Objectif : comprendre et implémenter chaque couche — du matériel à l’espace utilisateur.
 
 ## Contenu
-- **Bootloader (MBR)** — initialisation et passage en mode protégé.  
-- **GDT / IDT / ISR / PIC** — gestion bas-niveau du processeur et des interruptions.  
-- **Mémoire (PMM / VMM / Paging)** — allocation physique, virtuelle et mappages.  
-- **Gestion des tâches** — context switch, scheduler, multitâche préemptif.  
-- **Système de fichiers (FAT16)** — lecture/écriture basique.  
+- **Bootloader (MBR)** — initialisation et passage en mode protégé.
+- **GDT / IDT / ISR / PIC** — gestion bas-niveau du processeur et des interruptions.
+- **Mémoire (PMM / VMM / Paging)** — allocation physique, virtuelle et mappages.
+- **Gestion des tâches** — context switch, scheduler, multitâche préemptif.
+- **Système de fichiers (FAT16)** — lecture/écriture basique.
 - **Syscalls & Userland** — interface entre noyau et programmes utilisateurs.
 
 ## Progression
 
-- [x] Bootloader
-- [x] GDT 
+- [~] Bootloader
+- [ ] GDT
 - [ ] IDT
 - [ ] ISR
 - [ ] PIC
@@ -24,7 +24,13 @@ Objectif : comprendre et implémenter chaque couche — du matériel à l’espa
 - [ ] Paging
 - [ ] Tasks
 - [ ] Scheduler
-- [ ] FS 
+- [ ] FS
 - [ ] VFS
 - [ ] Syscalls
 - [ ] Userland
+
+## Mises à jour
+
+### 09/12 Commit: b3ae4b7c0d6b7f950995f0871c1755ac4a084c0e
+Après avoir montré comment faire un bootloader basique, nous utiliserons Limine pour la suite afin d'alléger notre charge de travail.
+
