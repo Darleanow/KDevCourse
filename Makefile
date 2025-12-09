@@ -8,16 +8,21 @@ CC = gcc
 AS = nasm
 LD = ld
 
-CFLAGS = -m32 -ffreestanding -O2 -c -I$(SRC_DIR)
+CFLAGS = -m32 -ffreestanding -O2 -c -I$(SRC_DIR) -I$(SRC_DIR)/arch/x86/gdt
 ASFLAGS = -f elf32
 LDFLAGS = -m elf_i386 -T linker.ld
 
 LIMINE_DATADIR = /usr/share/limine
 
-ASM_SOURCES = $(wildcard $(SRC_DIR)/*.asm)
-C_SOURCES = $(wildcard $(SRC_DIR)/*.c)
+ALL_C_SOURCES = $(shell find $(SRC_DIR) -name "*.c")
+ALL_ASM_SOURCES = $(shell find $(SRC_DIR) -name "*.asm")
+
+START_SOURCE = $(SRC_DIR)/start.asm
+OTHER_ASM_SOURCES = $(filter-out $(START_SOURCE), $(ALL_ASM_SOURCES))
+
 OBJ = $(BUILD_DIR)/$(SRC_DIR)/start.o \
-      $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/$(SRC_DIR)/%.o, $(C_SOURCES))
+      $(patsubst $(SRC_DIR)/%.asm, $(BUILD_DIR)/$(SRC_DIR)/%.o, $(OTHER_ASM_SOURCES)) \
+      $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/$(SRC_DIR)/%.o, $(ALL_C_SOURCES))
 
 all: $(DISK_IMG)
 
